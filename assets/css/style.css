@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 /*==================== VARIABLES CSS ====================*/
 :root {
     --header-height: 3rem;
+    --font-semi:600;
 
     /*========== Colors ==========*/
-    /* Change favorite color */
     --hue-color: 230; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
 
     /* HSL color mode */
@@ -23,8 +23,8 @@
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
 
     /*========== Font and typography ==========*/
-    --body-font: 'Poppins', sans-serif;
 
+    --body-font:'Poppins', sans-serif;
     /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
     --big-font-size: 2rem;
     --h1-font-size: 1.5rem;
@@ -39,8 +39,7 @@
     --font-semi-bold: 600;
 
     /*========== Margenes Bottom ==========*/
-    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
-    --mb-0-25: .25rem;
+
     --mb-0-5: .5rem;
     --mb-0-75: .75rem;
     --mb-1: 1rem;
@@ -50,9 +49,12 @@
     --mb-3: 3rem;
 
     /*========== z index ==========*/
+
+    --z-back: -10;
     --z-tooltip: 10;
+    --z-normal:1;
     --z-fixed: 100;
-    --z-modal: 1000;
+    
 }
 
 /* Font size for large devices */
@@ -79,9 +81,12 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  border: 0;
   text-decoration: none;
   list-style: none;
   text-transform: capitalize;
+  font-family: var(--body-font);
+  
 }
 
 html {
@@ -92,9 +97,7 @@ html {
 
 
 body {
-  margin: 0 0 var(--header-height) 0;
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
+  margin: var(--header-height) 0 0 0;
   background-color: var(--body-color);
   color: var(--text-color);
 }
@@ -104,18 +107,172 @@ h1, h2, h3, h4 {
   font-weight: var(--font-semi-bold);
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
 
 /*==================== REUSABLE CSS CLASSES ====================*/
 
-/*==================== LAYOUT ====================*/
 
+.section-title{
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  margin-top: var(--mb-2);
+  margin-bottom: var(--mb-3);
+  text-align: center;
+}
+
+
+.section-title::after{
+  position: absolute;
+  content: "";
+  width: 6.4rem;
+  height: .18rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top:2rem;
+  background-color: var(--first-color);
+}
+
+.section{
+padding-top: 3rem;
+padding-bottom: 2rem;
+}
+/*==================== LAYOUT ====================*/
+.bd-grid{
+   /*max-width: 1024px;*/
+   display: grid;
+   grid-template-columns: 100%;
+  column-gap: 2rem;
+  width: calc(100% - 2rem);
+  margin: 0 var(--mb-2);
+ 
+}
+
+.header{
+  width: 100%;
+  position:fixed;
+  top:0; left:0;
+  z-index: var(--z-fixed);
+  background-color: var(--body-color);
+  box-shadow: 0 .1rem .4rem rgba(146,161,176,.15); 
+  padding: 2rem;
+  
+}
  
 /*==================== NAVBAR ====================*/
 
+  .nav{
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: var(--font-semi);
+  
+}
+  .nav__menu{
+    margin-right: 10.3rem;
+  }
 
+  .nav__logo{
+    color: var(--first-color-second);
+    font-size: 2.5rem;
+    margin-left: 10.3rem;
+  }
 
+  .nav__logo:hover{
+    color: var(--first-color-alt);
+  }
 
+  .nav__toggle{
+    color:var(--first-color-second);
+    cursor: pointer;
+   display: none;
+   font-size: 2rem;
+  }
+  .nav__toggle:hover{
+    color: var(--first-color-alt);
+  }
+
+  .header .nav .nav__menu .nav__list{
+    display: flex; 
+    gap: 3rem;
+  }
+
+ .nav__link{
+    font-size: var(--h2-font-size);  
+    position: relative;
+    }
+
+/*active menu*/
+ .active::after{
+    position: absolute;
+    content: "";
+    width:100%;
+    height: 0.2rem;
+    left:0;
+    top: 2rem;
+    background-color: var(--first-color-lighter);
+  }
+  /*==================== SHOW MENU ====================*/
+
+  
+  
+  
+    /*==================== MEDIAQUERY ====================*/
+
+  @media screen and (max-width:768px) {
+  
+    html{
+      font-size: 55%;
+    }
+
+  .nav__menu{
+    position: fixed;
+    top:7rem;
+    left:-100%;
+    width: 40%;
+    height: 100%;
+    padding: 2rem;
+    background-color: var(--first-color-alt);
+    transition: .5s;
+    margin-bottom:var(--mb-3);
+  }
+
+  .header .nav .nav__menu .nav__list{
+    display: block;
+  }
+
+  .header .nav .nav__menu .nav__list .nav__item{
+    margin: 5rem 0;
+  }
+
+  .nav__link{
+    position: relative;
+    color: #fff; 
+    font-size: 1.8rem;
+
+  }
+
+  
+  .nav__link:hover::before{
+    position: absolute;
+    content: "";
+    width:100%;
+    height: 0.18rem;
+    left:0;
+    top: 2rem;
+    background-color: var(--first-color-lighter);
+     
+  }
+
+  .nav__logo{
+    margin-left: 3rem;
+  }
+  .nav__toggle{
+    display: inline-block;
+    margin-right: 3rem;
+  }
+  .show{
+    left: 0;
+  }
+}
