@@ -126,8 +126,8 @@ section{
 .section-title::after{
   position: absolute;
   content: "";
-  width: 9.5rem;
-  height: .18rem;
+  width: 12rem;
+  height: .2rem;
   left: 0;
   right: 0;
   margin: auto;
@@ -559,6 +559,61 @@ border-radius: .5rem;
 }
 
 
+ /*==================== Contact ====================*/
+
+ .contact__container .contact__form{
+  
+  margin: 0 auto;
+ }
+.contact__input{
+  width: 100%;  
+  font-weight: var(--font-semi);
+  padding: 1.5rem;
+  border-radius: .5rem;
+  border:.3rem solid var(--title-color);
+  outline:none;
+  margin-bottom: var(--mb-3);
+}
+
+.contact__container .btn{
+  display: block;
+  cursor: pointer;
+
+  margin-left: auto;
+}
+
+/*==================== footer ====================*/
+
+.footer{
+  background-color: var(--title-color);
+  color: #fff;
+  text-align: center;
+  font-weight: var(--font-semi);
+  padding: 2rem 0;
+  margin-top: .3rem;
+}
+
+.footer__title{
+  color: var(--first-color);
+  font-size:3rem ;
+  margin-bottom:var(--mb-2);
+}
+
+.footer__social a{
+  font-size:2.8rem;
+  color: #fff;
+  
+}
+
+.footer__social a i:hover{
+  color: var(--first-color);
+  transform: translateY(-1rem);
+  transition: .1s all ease-in-out;
+  margin-bottom: var(--mb-2-5);
+}
+
+
+
 
 
 
@@ -601,6 +656,19 @@ border-radius: .5rem;
     }
     .about__box{
       margin-top: 0;
+    }
+
+    /*about*/
+    .about__subtitle{
+      text-align: center;
+    }
+
+    .about__text{
+      margin-bottom: 2rem;
+    }
+
+    .about__list-item{
+      width: 28rem;
     }
   }
 
@@ -681,4 +749,6 @@ border-radius: .5rem;
     flex-direction: row;
     margin-bottom: 10rem;
   }
+
+
 }
