@@ -575,12 +575,15 @@ border-radius: .5rem;
   margin-bottom: var(--mb-3);
 }
 
+
 .contact__container .btn{
   display: block;
   cursor: pointer;
-
-  margin-left: auto;
+  width: 100%;
+ 
 }
+
+
 
 /*==================== footer ====================*/
 
