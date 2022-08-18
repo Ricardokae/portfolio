@@ -58,3 +58,37 @@ filterContainer.addEventListener("click", e =>{
         });
     }
 });
+
+/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+const sections = document.querySelectorAll('section[id]')
+
+function scrollActive(){
+    const scrollY = window.pageYOffset
+
+    sections.forEach(current =>{
+        const sectionHeight = current.offsetHeight
+        const sectionTop = current.offsetTop - 50;
+        sectionId = current.getAttribute('id')
+
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active')
+        }else{
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active')
+        }
+    })
+}
+window.addEventListener('scroll', scrollActive)
+
+/*===== SCROLL REVEAL ANIMATION =====*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2000,
+    delay: 200,
+//     reset: true
+});
+
+sr.reveal('.home__data, .home__icon-image,.about__image, about__content, .about__content,.about__list, .skills__subtitle, .skills__text, .projects__gallery-nav, .btn',{}); 
+sr.reveal('.about__text, ',{delay: 400}); 
+sr.reveal('.home__social-icon',{ interval: 200}); 
+sr.reveal('.skills__data, .projects__gallery-content, .contact__input, .section-title',{interval: 200}); 
