@@ -398,11 +398,12 @@
 
         <div class="contact__container bd-grid">
             <form action="https://formsubmit.co/4e689a93f82c9d355a05c72679fd5cca" method="POST" class="contact__form">
-                <input type="text" placeholder="Nome" class="contact__input" required>
-                <input type="email" placeholder="E-mail" class="contact__input" required>
-                <textarea name="" id="" cols="30" placeholder="digite alguma coisa..." rows="10 " class="contact__input" required></textarea>
+                <input type="text" name="name" placeholder="Nome" class="contact__input" required>
+                <input type="email" name="E-mail" placeholder="E-mail" class="contact__input" required>               
+                <textarea placeholder="digite alguma coisa..." name="mensagem"  class="contact__input" cols="30" rows="10" required></textarea>
                 <input type="hidden" name="_captcha" value="false">
-                <input type="submit" value="enviar" class="btn">
+                <button type="submit" value="enviar" class="btn">enviar</button>
+                    
             </form>
         </div>
 
