@@ -342,8 +342,8 @@ border: 1rem solid var(--first-color-lighter);
 .about__list-item{
   display: inline-flex;
   width: 27rem;
-  padding-left: 3rem;
-
+  padding-left: 2rem;
+  
 }
 
 .about__list-item label{
@@ -353,6 +353,7 @@ border: 1rem solid var(--first-color-lighter);
   border-right: .2rem solid var(--first-color-lighter);
   color: var(--text-color);
   margin-bottom: 2rem;
+  
 }
 
 .about__list-item  p{
