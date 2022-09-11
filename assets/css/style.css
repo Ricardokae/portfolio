@@ -167,7 +167,7 @@ padding-bottom: 2rem;
   font-weight: var(--font-semi);
   padding: .75rem 2.5rem;
   border-radius: .4rem;
-  color: var(--text-color-light);
+  color: #fff;
   background-color: var(--first-color-alt);
 }
  
@@ -324,10 +324,12 @@ border: 1rem solid var(--first-color-lighter);
 .about__content .about__subtitle{
   font-size: 2.5rem;
   margin: 0 0 var(--mb-1-5) 0;
+  
 }
 
 .about__content{
   padding-left: 3rem;
+  text-align: center;
 }
 
 .about__content .about__subtitle .about-title-color{
@@ -337,6 +339,9 @@ border: 1rem solid var(--first-color-lighter);
 .about__text{
   font-size: 1.5rem;
   line-height: 3rem;
+}
+.about__list{
+text-align: center;
 }
 
 .about__list-item{
@@ -491,15 +496,12 @@ align-items: center;
 }
 
 .projects__gallery-content{
-display: flex;
-  flex-wrap: wrap;
-
+  display: grid;
+  gap: 3rem 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(33rem, 1fr));
 }
 
-.gallery__item{
-  width:calc(100% / 2);
-  padding: 1.5rem;
-}
+
 
 .gallery__item.show{
   animation:fade-in 0.5s ease;
@@ -565,6 +567,7 @@ border-radius: .5rem;
  .contact__container .contact__form{
   
   margin: 0 auto;
+  padding: 2rem;
  }
 .contact__input{
   width: 100%;  
@@ -739,6 +742,11 @@ border-radius: .5rem;
  .home__title{
   font-size: 5.5rem;
  }
+  /*==================== GALLERY ====================*/
+  
+.gallery__item{
+  width: 100%;
+}
 
 }
 
