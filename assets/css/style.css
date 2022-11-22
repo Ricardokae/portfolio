@@ -70,10 +70,7 @@
     }
 }
 
-/*========== Variables Dark theme ==========*/
 
-
-/*========== Button Dark/Light ==========*/
 
 
 /*==================== BASE ====================*/
@@ -298,6 +295,7 @@ padding-bottom: 2rem;
 /*==================== ABOUT ====================*/
 .about{
   width: 100%;
+  
 }
 .about__container{
   display: flex;
@@ -450,8 +448,10 @@ align-items: center;
 
     /*==================== PROJECTS ====================*/
 
+
 .projects__gallery{
   margin: 0 auto;
+  
 } 
 
 
@@ -520,6 +520,10 @@ align-items: center;
   display: none;
 }
 
+.gallery__item{
+  border: .1rem solid #eee;
+}
+
 .gallery__item-inner{
   cursor: pointer;
   position: relative;
@@ -560,6 +564,16 @@ border-radius: .5rem;
   padding-top:.5rem ;
   
 }
+
+.gallery__item-inner .overlay a{
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: var(--font-semi);
+  padding-top:.5rem ;
+  
+}
+
+
 
 
  /*==================== Contact ====================*/
